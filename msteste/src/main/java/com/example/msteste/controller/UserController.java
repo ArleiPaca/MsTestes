@@ -5,6 +5,10 @@ import com.example.msteste.service.UserService;
 import jakarta.annotation.PostConstruct;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,16 +30,19 @@ public class UserController	{
     public	List<UserDTO>	getUsers() {
         return	userService.getAll();
     }
+
     @GetMapping("/{id}")
     public	UserDTO	findById(@PathVariable	Long	id) {
         return	userService.findById(id);
     }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public	UserDTO	newUser(@RequestBody	@Valid	UserDTO	userDTO) {
 
         return	userService.save(userDTO);
     }
+
     @GetMapping("/{cpf}/cpf")
     public	UserDTO	findByCpf(@PathVariable	String	cpf) {
         return	userService.findByCpf(cpf);
@@ -53,6 +60,20 @@ public class UserController	{
 
         return	userService.queryByName(nome);
     }
+
+    @PatchMapping("/{id}")
+    public UserDTO editUser(@PathVariable Long id,
+                            @Valid @RequestBody UserDTO userDTO) {
+        return userService.editUser(id, userDTO);
+    }
+
+    @GetMapping("/pageable")
+    public Page<UserDTO> getUsersPage(Integer page , Integer  size) {
+        PageRequest pageRequest = PageRequest.of(page, size);
+        return userService.getAllPage(pageRequest);
+    }
+
+
 
 
     /*

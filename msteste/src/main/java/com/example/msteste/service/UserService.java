@@ -31,7 +31,7 @@ public class UserService {
 
     public UserDTO findById(long userId) {
         User usuario = userRepository.findById(userId)
-                .orElseThrow(() -> new RuntimeException("User	not	found")
+                .orElseThrow(() -> new RuntimeException("User  not	found")
                 );
         return UserDTO.convert(usuario);
     }

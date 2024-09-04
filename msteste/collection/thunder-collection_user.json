@@ -1,0 +1,28 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "user",
+    "collectionId": "a1da5e9e-93d7-4a38-a55c-fac9827b4805",
+    "dateExported": "2024-09-04T01:35:52.802Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "72890f1f-6b3b-4394-9a06-8efb31a2e3dc",
+            "colId": "a1da5e9e-93d7-4a38-a55c-fac9827b4805",
+            "containerId": "",
+            "name": "Post User",
+            "url": "http://localhost:8080/user",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-09-04T01:32:55.686Z",
+            "modified": "2024-09-04T01:32:55.686Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n\"nome\":\"Arlei\"  ,\r\n\"cpf\":\"123456789\",\r\n\"endereco\": \"Rua abc\",\r\n\"email\":\"arlei@hotmail.com\",\r\n\"telefone\":\"1234-3454\"\r\n\r\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "JX-tNDpcYvsSN6i8rF0S8A8BhrcxVH4mgRAXVqM0FipWdNeoOX9dNF7sdvAQTwQG0pjkutAg7Nx8TGMonxSu1Q"
+}
